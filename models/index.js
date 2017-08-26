@@ -33,4 +33,28 @@ Object.keys(db).forEach(function(modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.user = require('./user.js')(sequelize, Sequelize);
+db.group_user_member = require('./group_user_member.js')(sequelize, Sequelize);
+db.group = require('./group.js')(sequelize, Sequelize);
+db.order_line = require('./order_line.js')(sequelize, Sequelize);
+db.order = require('./order.js')(sequelize, Sequelize);
+db.sub_order = require('./sub_order.js')(sequelize, Sequelize);
+
+
+
+db.group.belongsTo(db.group_user_member);
+db.group_user_member.hasOne(db.group);
+
+db.user.belongsTo(db.group_user_member);
+db.group_user_member.hasOne(db.user);
+
+db.user.belongsTo(db.order);
+db.order.hasMany(db.user);
+
+db.group.belongsTo(db.order);
+db.order.hasOne(db.group);
+
+db.order_line.belongsTo(db.order);
+db.order.hasMany(db.order_line);
+
 module.exports = db;
