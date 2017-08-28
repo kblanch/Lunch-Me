@@ -13,6 +13,8 @@ body {
 	width: 23%;
 	background-color: transparent;
 	margin-left:0.3px;
+	max-width: 50px;
+	min-width:300px;
 }
 
 header {
@@ -23,12 +25,14 @@ header {
 
 
 .width-290 {
-	width:20%;
 	height:52px;
 	font-size:20px;
 	margin: 5px;
 	letter-spacing: 1px;
 	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	min-width: 50px;  
+	max-width: 300px;
 }
 
 a:visited{
@@ -84,3 +88,10 @@ h3, .confirmP, #confirmWrapper {
 ul {
 	list-style-type: none;
 }
+
+#submitCode{
+	width:100%;
+	min-width: 40px;
+	max-width:165px;
+}
+ 
