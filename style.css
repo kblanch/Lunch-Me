@@ -1,0 +1,86 @@
+body {
+	background-color: transparent;
+}
+
+.container{
+	width:100%;
+	text-align: center;
+
+}
+
+.container img{
+	height: 23%;
+	width: 23%;
+	background-color: transparent;
+	margin-left:0.3px;
+}
+
+header {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 50px;
+	color:  #ab2318;
+}
+
+
+.width-290 {
+	width:20%;
+	height:52px;
+	font-size:20px;
+	margin: 5px;
+	letter-spacing: 1px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a:visited{
+	color:white;
+}
+
+.formInput, #secretCodeInput {
+	width: 50%;
+	background-color: #f4f4f4;
+	border-style: none;
+	padding: 5px;
+	margin: auto;
+}
+
+#formContent {
+	padding: 20px;
+	text-align: center;
+	border-right: 5px solid #f4f4f4;
+}
+
+
+.creatorHeader, .timesUp {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 50px;
+	color: #ab2318;
+	padding: 20px;
+}
+
+.rInfoDiv {
+	padding: 20px;
+	text-align: center;
+}
+
+h3, .confirmP, #confirmWrapper {
+	text-align: center;
+	padding: 20px;
+
+}
+
+.zipCodeError{
+	color: red;
+}
+
+.confirmHeaders{
+	color: gray;
+}
+
+.parsley-required, .parsley-custom-error-message{
+	color: red;
+}
+
+ul {
+	list-style-type: none;
+}
