@@ -12,17 +12,17 @@ module.exports = function(app) {
         });
       });
 
-      app.get("/api/user/user", function(req, res) {
+      app.get("/api/user/:user", function(req, res) {
         
         console.log(req.query);
-        var userData = req.body;
-
+        var userName = req.params.user;
+        console.log("User Field" + userName);
         db.user.findOne({
           where: {
-            user_name: userData.user,
-            user_password: userData.pw
+            user_name: userName
           }
         }).then(function(dbUser) {
+          console.log(dbUser);
           res.json(dbUser);
         });
       });
