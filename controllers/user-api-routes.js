@@ -12,25 +12,30 @@ module.exports = function(app) {
         });
       });
 
-      app.get("/api/user/:user", function(req, res) {
+      app.get("/api/user/user", function(req, res) {
+        
+        console.log(req.query);
+        var userData = req.body;
+
         db.user.findOne({
           where: {
-            user_name: req.params.user
+            user_name: userData.user,
+            user_password: userData.pw
           }
         }).then(function(dbUser) {
           res.json(dbUser);
         });
       });
 
-      app.get("/api/user/:password", function(req, res) {
-        db.user.findOne({
-          where: {
-            user_password: req.params.password
-          }
-        }).then(function(dbUser) {
-          res.json(dbUser);
-        });
-      });
+      //app.get("/api/user/password", function(req, res) {
+        //db.user.findOne({
+          //where: {
+            //user_password: req.params.password
+          //}
+        //}).then(function(dbUser) {
+          //res.json(dbUser);
+        //});
+      //});
     
       app.delete("/api/user/:id", function(req, res) {
         db.user.destroy({

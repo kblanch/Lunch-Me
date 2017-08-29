@@ -1,5 +1,5 @@
 {
-  "name": "Lunch-Me",
+  "name": "lunch-me",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -23,6 +23,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "moment": "^2.18.1",
-    "sequelize": "^4.7.2"
-  }
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.7.5"
+  },
+  "devDependencies": {}
 }

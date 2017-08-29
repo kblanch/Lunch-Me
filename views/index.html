@@ -140,12 +140,12 @@
             
                 <div class="container">
                   <label><b>Username</b></label>
-                  <input type="text" placeholder="Enter Username" name="uname" required>
+                  <input type="text" placeholder="Enter Username" name="uname" id=user required>
             
                   <label><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw" required>
+                  <input type="password" placeholder="Enter Password" name="psw" id=pw required>
                     
-                  <button class="btn btn-default" type="submit">Login</button>
+                  <button class="btn btn-default" type="submit" id=LogClick>Login</button>
                 </div>
             
                 <div class="container" style="background-color:#f1f1f1">
@@ -165,7 +165,19 @@
                 }
             }
             </script>
+            <script>
+                $("#LogClick").on("click", function(event){
+                    var userData = {
+                        name: $("user").val().trim(),
+                        password: $("pw").val().trim(),
+                    }
+                })
 
+            //AJAX Call//
+            $.get("/api/user", userData, function(data){
+                $()
+            })
+            </script>
 <a href="creators_page.html"><button type="button" class="btn btn-primary btn-danger btn-lg width-290">Create Order</button></a>
 <p></p>
 
