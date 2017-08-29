@@ -12,10 +12,20 @@ module.exports = function(app) {
         });
       });
 
-      app.get("/api/authors/:id", function(req, res) {
+      app.get("/api/authors/:user", function(req, res) {
         db.user.findOne({
           where: {
-            id: req.params.id
+            user_name: req.params.user
+          }
+        }).then(function(dbUser) {
+          res.json(dbUser);
+        });
+      });
+
+      app.get("/api/authors/:password", function(req, res) {
+        db.user.findOne({
+          where: {
+            user_password: req.params.password
           }
         }).then(function(dbUser) {
           res.json(dbUser);
