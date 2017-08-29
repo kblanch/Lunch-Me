@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
-require("./controllers/ordersController")(app);
+// require("./controllers/ordersController")(app);
 
 require("./controllers/group-api-routes.js")(app);
 require("./controllers/order-api-routes.js")(app);
