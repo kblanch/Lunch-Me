@@ -11,6 +11,16 @@ module.exports = function(app) {
           res.json(dbUser);
         });
       });
+
+      app.get("/api/authors/:id", function(req, res) {
+        db.user.findOne({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(dbUser) {
+          res.json(dbUser);
+        });
+      });
     
       app.delete("/api/user/:id", function(req, res) {
         db.user.destroy({
