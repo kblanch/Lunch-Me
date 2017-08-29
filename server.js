@@ -22,6 +22,7 @@ require("./controllers/group-api-routes.js")(app);
 require("./controllers/order-api-routes.js")(app);
 require("./controllers/order-line-api-routes.js")(app);
 require("./controllers/user-api-routes.js")(app);
+require("./controllers/htmlRoutes.js")(app);
 
 
 db.sequelize.sync({ force: true }).then(function() {
