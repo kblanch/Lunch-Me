@@ -46,6 +46,11 @@
 
         console.log(userName);
         console.log(pwd);
+
+		$.get("/api/user/" + userName, function(data){
+             console.log(data);
+        });
+
         
         event.preventDefault();//Prevent Submit from Bootstrap
     });
