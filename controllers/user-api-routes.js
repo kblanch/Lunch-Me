@@ -11,6 +11,26 @@ module.exports = function(app) {
           res.json(dbUser);
         });
       });
+
+      app.get("/api/authors/:user", function(req, res) {
+        db.user.findOne({
+          where: {
+            user_name: req.params.user
+          }
+        }).then(function(dbUser) {
+          res.json(dbUser);
+        });
+      });
+
+      app.get("/api/authors/:password", function(req, res) {
+        db.user.findOne({
+          where: {
+            user_password: req.params.password
+          }
+        }).then(function(dbUser) {
+          res.json(dbUser);
+        });
+      });
     
       app.delete("/api/user/:id", function(req, res) {
         db.user.destroy({
