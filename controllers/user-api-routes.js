@@ -12,7 +12,7 @@ module.exports = function(app) {
         });
       });
 
-      app.get("/api/authors/:user", function(req, res) {
+      app.get("/api/user/:user", function(req, res) {
         db.user.findOne({
           where: {
             user_name: req.params.user
@@ -22,7 +22,7 @@ module.exports = function(app) {
         });
       });
 
-      app.get("/api/authors/:password", function(req, res) {
+      app.get("/api/user/:password", function(req, res) {
         db.user.findOne({
           where: {
             user_password: req.params.password
