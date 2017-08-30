@@ -1,5 +1,8 @@
-function zomatoData(longitude, latitude, radius, restaurant) {
+
+
+module.exports = function zomatoData(longitude, latitude, radius, restaurant) {
         var zomatoQueryURL = "https://developers.zomato.com/api/v2.1/search?q=" + restaurant + "&count=5&lat=" + latitude + "&lon=" + longitude + "&radius=" + radius + "&sort=real_distance&order=asc";
+        var globalLocations = []; 
         $.ajax({
             url: zomatoQueryURL,
             headers: {
@@ -24,9 +27,7 @@ function zomatoData(longitude, latitude, radius, restaurant) {
                         temp.push(+data.restaurants[i].restaurant.location.longitude)
                     } else {temp.push(i + 1)
                        }
-
-
-                }
+                      }
                 globalLocations.push(temp);
                   
                 rInfoDiv.html(
@@ -36,14 +37,9 @@ function zomatoData(longitude, latitude, radius, restaurant) {
                     + data.restaurants[i].restaurant.location.city + data.restaurants[i].restaurant.location.latitude + data.restaurants[i].restaurant.location.longitude +"<br><br></div>");
 
                 restaurantListDiv.append(rInfoDiv);
-               
-
-
+     
             };
-
-
-
-            var btn = $('<button class="btn btn-warning" id="modalSubmit">Submit</button>');
+             var btn = $('<button class="btn btn-warning" id="modalSubmit">Submit</button>');
             restaurantListDiv.append(btn);
             $("#restaurantContent").html(restaurantListDiv);}
   //new two line
@@ -52,8 +48,5 @@ function zomatoData(longitude, latitude, radius, restaurant) {
         };
         });
          console.log(globalLocations);
-
-  
-    
-         
-    }
+         return globalLocations;
+     }
