@@ -63,7 +63,7 @@ $(document).ready(function() {
 
 
 
-            var btn = $('<button class="btn btn-warning" id="modalSubmit">Submit</button>');
+            var btn = $('<button class="btn btn-danger" id="modalSubmit">Submit</button>');
             restaurantListDiv.append(btn);
             $("#restaurantContent").html(restaurantListDiv);}
   //new two line
@@ -140,7 +140,7 @@ $(document).ready(function() {
             '<p id="restaurantConfirm" class="confirmP"></p>' +
             '<h3 class="confirmHeaders">Secret Code: </h3>' +
             '<p id="secretCodeConfirm" class="confirmP"></p>' + '<br>' +
-            '<a href="/adding"><button type="button" class="btn btn-warning">Add Order</button></a>' +
+            '<a href="/adding"><button type="button" class="btn btn-danger">Add Order</button></a>' +
             '</div>' +
             '</div>')
 
