@@ -1,3 +1,5 @@
+
+
 var distance = require('google-distance');
 distance.apiKey = 'AIzaSyCCAH25S435Tvu2oVX4KW7fGvSZg4EOd6M';
 var zomato = require('zomato');
@@ -64,21 +66,20 @@ function distances(oLat, oLon, destLat, destLon){googleMapsClient.distanceMatrix
 };
 
 
-//TURN BY TURN directions
-//     function distance (oLat, oLon, destLat, destLon){googleMapsClient.directions({
-//       origin: [
-//       oLat,oLon
-//         ],
-//       destination: [
-//         destLat,destLon
-//       ]
-//     }, function(err, response) {
-//   if (!err) {
-//     response.json.routes[0].legs[0].steps.forEach(function(element) {
-//        console.log(element.html_instructions) 
-//     } );
+// TURN BY TURN directions
+    function directions(oLat, oLon, destLat, destLon){googleMapsClient.directions({
+      origin: [
+      oLat,oLon
+        ],
+      destination: [
+        destLat,destLon
+      ]
+    }, function(err, response) {
+  if (!err) {
+    response.json.routes[0].legs[0].steps.forEach(function(element) {
+       console.log(element.html_instructions) 
+    } );
 
-//   }
-//     })
-// };
-
+  }
+    })
+};
